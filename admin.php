@@ -1,8 +1,12 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 session_start();
 require './internal/db.php';
 
-$admin_password = "secureadmin"; // Change for security
+$admin_password = getenv('ADMIN_PASSWORD'); // Change for security
 
 // Admin Authentication
 if (!isset($_SESSION['admin_logged_in'])) {

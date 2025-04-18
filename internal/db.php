@@ -1,8 +1,12 @@
 <?php
-$host = 'localhost';
-$dbname = 'study_tracker';
-$username = 'root';
-$password = 'root';
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$host = getenv('DB_HOST');
+$dbname = getenv('DB_NAME');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASS');
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
