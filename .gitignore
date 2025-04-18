@@ -4,3 +4,5 @@
 # Ignore _old folder (anywhere in the project)
 _old/
 **/_old/
+
+test.php

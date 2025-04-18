@@ -6,7 +6,7 @@ $dotenv->load();
 session_start();
 require './internal/db.php';
 
-$admin_password = getenv('ADMIN_PASSWORD'); // Change for security
+$admin_password = $_ENV['ADMIN_PASSWORD']; // Change for security
 
 // Admin Authentication
 if (!isset($_SESSION['admin_logged_in'])) {
